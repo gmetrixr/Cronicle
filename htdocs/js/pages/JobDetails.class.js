@@ -866,7 +866,7 @@ Class.subclass( Page.Base, "Page.JobDetails", {
 		
 		// live job log tail
 		var remote_api_url = app.proto + job.hostname + ':' + app.port + config.base_api_uri;
-		if (config.custom_live_log_socket_url) {
+		if (process.env.IS_LOCAL && config.custom_live_log_socket_url) {
 			// custom websocket URL for single-master systems behind an LB
 			remote_api_url = config.custom_live_log_socket_url + config.base_api_uri;
 		}

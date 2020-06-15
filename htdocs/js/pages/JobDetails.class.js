@@ -866,9 +866,9 @@ Class.subclass( Page.Base, "Page.JobDetails", {
 		
 		// live job log tail
 		var remote_api_url = app.proto + job.hostname + ':' + app.port + config.base_api_uri;
-		if (config.custom_live_log_socket_url) {
+		if (config.web_socket_hostname) {
 			// custom websocket URL for single-master systems behind an LB
-			remote_api_url = config.custom_live_log_socket_url + config.base_api_uri;
+			remote_api_url = app.port + config.web_socket_hostname + config.base_api_uri;
 		}
 		else if (!config.web_socket_use_hostnames && app.servers && app.servers[job.hostname] && app.servers[job.hostname].ip) {
 			// use ip if available, may work better in some setups
@@ -1045,9 +1045,9 @@ Class.subclass( Page.Base, "Page.JobDetails", {
 		var error_shown = false;
 		
 		var url = app.proto + job.hostname + ':' + app.port;
-		if (config.custom_live_log_socket_url) {
+		if (config.web_socket_hostname) {
 			// custom websocket URL for single-master systems behind an LB
-			url = config.custom_live_log_socket_url;
+			url = app.proto + config.web_socket_hostname;
 		}
 		else if (!config.web_socket_use_hostnames && app.servers && app.servers[job.hostname] && app.servers[job.hostname].ip) {
 			// use ip if available, may work better in some setups

@@ -188,7 +188,6 @@ Class.add( Page.Admin, {
 			url: 'http://api.randomuser.me/',
 			dataType: 'json',
 			success: function(data){
-				// console.log(data);
 				if (data.results && data.results[0] && data.results[0].user) {
 					var user = data.results[0].user;
 					$('#fe_eu_username').val( user.username );

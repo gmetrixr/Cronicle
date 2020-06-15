@@ -1039,7 +1039,6 @@ Class.subclass( Page.Base, "Page.JobDetails", {
 	
 	start_live_log_watcher: function(job) {
 		// open special websocket to target server for live log feed
-		console.log(config);
 		var self = this;
 		var $cont = null;
 		var chunk_count = 0;

@@ -269,7 +269,7 @@ app.extend({
 			url = this.proto + location.host;
 		}
 		if (config.web_socket_hostname) {
-			url = this.proto + config.web_socket_hostname;
+			url = config.web_socket_hostname;
 		}
 		Debug.trace("Websocket Connect: " + url);
 		

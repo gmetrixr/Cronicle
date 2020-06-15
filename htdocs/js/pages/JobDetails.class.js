@@ -868,7 +868,7 @@ Class.subclass( Page.Base, "Page.JobDetails", {
 		var remote_api_url = app.proto + job.hostname + ':' + app.port + config.base_api_uri;
 		if (config.web_socket_hostname) {
 			// custom websocket URL for single-master systems behind an LB
-			remote_api_url = app.port + config.web_socket_hostname + config.base_api_uri;
+			remote_api_url = config.web_socket_hostname + config.base_api_uri;
 		}
 		else if (!config.web_socket_use_hostnames && app.servers && app.servers[job.hostname] && app.servers[job.hostname].ip) {
 			// use ip if available, may work better in some setups
@@ -1047,7 +1047,7 @@ Class.subclass( Page.Base, "Page.JobDetails", {
 		var url = app.proto + job.hostname + ':' + app.port;
 		if (config.web_socket_hostname) {
 			// custom websocket URL for single-master systems behind an LB
-			url = app.proto + config.web_socket_hostname;
+			url = config.web_socket_hostname;
 		}
 		else if (!config.web_socket_use_hostnames && app.servers && app.servers[job.hostname] && app.servers[job.hostname].ip) {
 			// use ip if available, may work better in some setups

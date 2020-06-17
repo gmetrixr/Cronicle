@@ -268,8 +268,8 @@ app.extend({
 		if (!config.web_direct_connect) {
 			url = this.proto + location.host;
 		}
-		if (config.web_socket_hostname) {
-			url = config.web_socket_hostname;
+		if (config.web_socket_url) {
+			url = config.web_socket_url;
 		}
 		Debug.trace("Websocket Connect: " + url);
 		

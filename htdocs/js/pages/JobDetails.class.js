@@ -1049,7 +1049,7 @@ Class.subclass( Page.Base, "Page.JobDetails", {
 			// custom websocket URL for single-master systems behind an LB
 			url = config.web_socket_url;
 		}
-		else if (!config.web_socket_use_url && app.servers && app.servers[job.hostname] && app.servers[job.hostname].ip) {
+		else if (!config.web_socket_use_hostnames && app.servers && app.servers[job.hostname] && app.servers[job.hostname].ip) {
 			// use ip if available, may work better in some setups
 			url = app.proto + app.servers[job.hostname].ip + ':' + app.port;
 		}
